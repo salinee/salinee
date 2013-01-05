@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+  <form method='POST'>
+    {% csrf_token %}
+    <legend>
+      Create a new post
+    </legend>
+    {% if error %}
+      <div class='alert alert-error'>
+        You must enter some contents.
+      </div>
+    {% endif %}
+    <div class='control-group'>
+      <div class='controls'>
+        <textarea class='textarea-content' rows='4' name='content'></textarea>
+      </div>
+    </div>
+    
+ 
+<div class="clearfix"><br>
+    <label>อัพโหลดไฟล์รูปภาพ</label>
+    <div class="input">
+        <input type="file" class="input-file" />
+    </div>
+ <div class='control-group'><br>
+      <button class='btn btn-large btn-primary' type='submit'>Save</button>
+    </div>
+</div>
+  </form>
+{% endblock %}
