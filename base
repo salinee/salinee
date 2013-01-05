@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MororMaket</title>
+<font color="#0000FF"></font>
+<img src="http://i.imgur.com/2usrU.jpg" width="3px" height="3px"> 
+    <link media='screen' href='/bootstrap/css/bootstrap.min.css' rel='stylesheet' />
+<link rel="stylesheet" type="text/css" href="logo.css" />    
+ 
+  </head>
+  <body>
+    <div class='container page'>
+      <div class='navbar'>
+        <div class='navbar-inner'>
+          <a class='brand' href='/'>Morormaket</a>
+  
+          <ul class='nav'>
+	      <li>
+                <a href='{{ cloths_url }}'>เสื้อผ้า</a>
+ 
+              </li>
+		
+              <li>
+                <a href='{{ shoes_url }}'>รองเท้า</a>
+ 
+              </li>
+ 
+              <li>
+                <a href='{{ bag_url }}'>กระเป๋า</a>
+ 
+              </li>
+		
+              <li>
+                <a href='{{ other_url }}'>อื่นๆ</a>
+ 
+              </li>
+            {% if not user %}
+              <li>
+                <a href='{{ login_url }}'>Login</a>
+              </li>
+            {% else %}
+              <li>
+                <a href='/'>
+                  {{ user.nickname }}
+                </a>
+              </li>
+		</li>
+                <li>
+                <a href='{{ logout_url }}'>Logout</a>
+ 
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+	
+      </div>
